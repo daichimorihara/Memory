@@ -28,4 +28,8 @@ class CardViewModel: ObservableObject {
         cardModel.cards
     }
     
+    // Mark - Intents
+    func choose(_ card: CardModel<String>.Card) {
+        cardModel.choose(card)
+    }
 }

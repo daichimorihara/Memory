@@ -13,6 +13,8 @@
 		42002F8E2802A19C00173378 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42002F8D2802A19C00173378 /* Preview Assets.xcassets */; };
 		42002F972802E9E000173378 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42002F962802E9E000173378 /* CardModel.swift */; };
 		42002F992802F4D400173378 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42002F982802F4D400173378 /* CardViewModel.swift */; };
+		4248666C28042792003E795C /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248666B28042792003E795C /* Cardify.swift */; };
+		4248666E28042FD7003E795C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248666D28042FD7003E795C /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		42002F8D2802A19C00173378 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42002F962802E9E000173378 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		42002F982802F4D400173378 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		4248666B28042792003E795C /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		4248666D28042FD7003E795C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				42002F8C2802A19C00173378 /* Preview Content */,
 				42002F962802E9E000173378 /* CardModel.swift */,
 				42002F982802F4D400173378 /* CardViewModel.swift */,
+				4248666B28042792003E795C /* Cardify.swift */,
+				4248666D28042FD7003E795C /* CardView.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 				42002F992802F4D400173378 /* CardViewModel.swift in Sources */,
 				42002F892802A19B00173378 /* ContentView.swift in Sources */,
 				42002F872802A19B00173378 /* MemoryApp.swift in Sources */,
+				4248666C28042792003E795C /* Cardify.swift in Sources */,
+				4248666E28042FD7003E795C /* CardView.swift in Sources */,
 				42002F972802E9E000173378 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
