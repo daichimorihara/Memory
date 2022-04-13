@@ -20,6 +20,8 @@ struct CardModel<CardContent> where CardContent: Equatable {
             cards.append(Card(content: content))
             cards.append(Card(content: content))
         }
+        // randomly distrubuted
+        cards.shuffle()
     }
     
     mutating func choose(_ card: Card) {
@@ -38,6 +40,10 @@ struct CardModel<CardContent> where CardContent: Equatable {
                 indexOfOneAndOnlyFaceUp = chosenIndex
             }
         }
+    }
+    
+    mutating func shuffle() {
+        cards.shuffle()
     }
     
     var indexOfOneAndOnlyFaceUp: Int? {

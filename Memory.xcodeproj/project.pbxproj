@@ -15,6 +15,10 @@
 		42002F992802F4D400173378 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42002F982802F4D400173378 /* CardViewModel.swift */; };
 		4248666C28042792003E795C /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248666B28042792003E795C /* Cardify.swift */; };
 		4248666E28042FD7003E795C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248666D28042FD7003E795C /* CardView.swift */; };
+		42ADA616280697D900184054 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ADA615280697D900184054 /* CardGameView.swift */; };
+		42ADA6182806986000184054 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ADA6172806986000184054 /* ThemeModel.swift */; };
+		42ADA61A2806999A00184054 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ADA6192806999A00184054 /* ThemeViewModel.swift */; };
+		42F2744828058D57008DBE86 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2744728058D57008DBE86 /* Trial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		42002F982802F4D400173378 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		4248666B28042792003E795C /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4248666D28042FD7003E795C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		42ADA615280697D900184054 /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
+		42ADA6172806986000184054 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		42ADA6192806999A00184054 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
+		42F2744728058D57008DBE86 /* Trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,10 @@
 				42002F982802F4D400173378 /* CardViewModel.swift */,
 				4248666B28042792003E795C /* Cardify.swift */,
 				4248666D28042FD7003E795C /* CardView.swift */,
+				42F2744728058D57008DBE86 /* Trial.swift */,
+				42ADA615280697D900184054 /* CardGameView.swift */,
+				42ADA6172806986000184054 /* ThemeModel.swift */,
+				42ADA6192806999A00184054 /* ThemeViewModel.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -149,10 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ADA61A2806999A00184054 /* ThemeViewModel.swift in Sources */,
+				42F2744828058D57008DBE86 /* Trial.swift in Sources */,
 				42002F992802F4D400173378 /* CardViewModel.swift in Sources */,
 				42002F892802A19B00173378 /* ContentView.swift in Sources */,
 				42002F872802A19B00173378 /* MemoryApp.swift in Sources */,
+				42ADA616280697D900184054 /* CardGameView.swift in Sources */,
 				4248666C28042792003E795C /* Cardify.swift in Sources */,
+				42ADA6182806986000184054 /* ThemeModel.swift in Sources */,
 				4248666E28042FD7003E795C /* CardView.swift in Sources */,
 				42002F972802E9E000173378 /* CardModel.swift in Sources */,
 			);

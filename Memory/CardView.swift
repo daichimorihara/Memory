@@ -14,23 +14,16 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.white
-
                 Circle()
                     .opacity(0.5)
 
                 Text(card.content)
                     .font(.system(size: 40))
 
-                if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: 1).strokeBorder(lineWidth: 1)
-                } else {
-                    RoundedRectangle(cornerRadius: 1)
-                }
-
             }
+            .cardify(isFaceUp: card.isFaceUp)
             .foregroundColor(.red)
-            .opacity((card.isMatched && !card.isFaceUp) ? 0 : 1)
+            //.opacity((card.isMatched && !card.isFaceUp) ? 0 : 1)
         }
     }
 }

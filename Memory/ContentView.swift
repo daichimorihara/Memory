@@ -8,19 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = CardViewModel()
-    
     var body: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 60))]) {
-            ForEach(vm.cards) { card in
-                CardView(card: card)
-                    .aspectRatio(2/3, contentMode: .fit)
-                    .onTapGesture {
-                        vm.choose(card)
-                    }
-            }
-        }
-        .padding()
+        Text("Hello, world")
     }
 }
 
