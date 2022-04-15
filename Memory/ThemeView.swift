@@ -37,6 +37,7 @@ struct ThemeView: View {
                             }
                             .lineLimit(1)
                         }
+                        .gesture(editMode == .active ? tap(theme) : nil)
                     }
                 }
                 .onDelete { indexSet in
@@ -93,6 +94,35 @@ struct ThemeView: View {
                         }
                 }
             }
+            .sheet(isPresented: $editSheet) {
+                NavigationView {
+                    ThemeEdit(theme: $themeToEdit)
+                        .navigationTitle("Theme Editor")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button("Cancel") {
+                                    backToThemeChooser()
+                                }
+                            }
+                            
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button("Save") {
+                                    if themeToEdit.emojis.map({ String($0) }).count > 1 {
+                                        vm.update(theme: themeToEdit)
+                                        backToThemeChooser()
+                                    } else {
+                                        // show alert that you should have at least two emojis
+                                        showAlert = true
+                                    }
+                                }
+                            }
+                        }
+                        .alert("Emojis can't be less than two,", isPresented: $showAlert) {
+                            Button("OK", role: .cancel) { }
+                        }
+                }
+            }
             .environment(\.editMode, $editMode)
         }
     }
@@ -110,6 +140,15 @@ struct ThemeView: View {
     func backToThemeChooser() {
         themeToEdit = ThemeModel(name: "New", emojis: "", numbers: 2, color: "red")
         plusSheet = false
+        editSheet = false
+    }
+    
+    func tap(_ theme: ThemeModel) -> some Gesture {
+        TapGesture()
+            .onEnded {
+                editSheet = true
+                themeToEdit = theme
+            }
     }
 }
 

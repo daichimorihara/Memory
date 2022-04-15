@@ -30,7 +30,7 @@ struct ThemeEdit: View {
     
     var removeEmojisSection: some View {
         Section {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 40))]) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 20))]) {
                 let emojis = theme.emojis.map{ String($0) }
                 ForEach(emojis, id: \.self) { emoji in
                     Text(emoji)
@@ -52,14 +52,19 @@ struct ThemeEdit: View {
     }
     
     @State private var emojisToAdd: String = ""
+    @State private var emojisSet = Set<String>()
     
     var addEmojisSection: some View {
         Section {
             TextField("", text: $emojisToAdd)
                 .onChange(of: emojisToAdd) { emojis in
                     theme.emojis = theme.emojis + emojis
+                        .filter{ $0.isEmoji }
+                        
                     
                     // remove duplicate characters
+                    emojisSet = Set(theme.emojis.map({ String($0) }))
+                    theme.emojis = Array(emojisSet).joined()
                 }
                 
         } header: {

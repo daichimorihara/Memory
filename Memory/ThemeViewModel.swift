@@ -43,5 +43,14 @@ class ThemeViewModel: ObservableObject {
     }
     
     // Mark Intents
-
+    func update(theme: ThemeModel) {
+        var new = themes.filter({ $0.id == theme.id }).onlyOne!
+        new.name = theme.name
+        new.emojis = theme.emojis
+        new.numbers = theme.numbers
+        new.color = theme.color
+        if let index = themes.firstIndex(where: { $0.id == new.id }) {
+            themes[index] = new
+        }
+    }
 }
