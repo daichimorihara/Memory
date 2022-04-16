@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardGameView: View {
-    @StateObject var vm = CardViewModel()
+    @StateObject var vm : CardViewModel
     @Namespace var namespacing
     
     var body: some View {
@@ -22,7 +22,11 @@ struct CardGameView: View {
                     restartButton
                 }
             }
-            deck.padding(.bottom)
+            VStack {
+                instruction.blinkEffect()
+                deck.padding(.bottom)
+            }
+        //    deck.padding(.bottom)
             
         }
         .padding()
@@ -35,7 +39,7 @@ struct CardGameView: View {
                     if undealt(card) || (!card.isFaceUp && card.isMatched) {
                         Color.clear
                     } else {
-                        CardView(card: card)
+                        CardView(card: card, theme: vm.theme)
                             .matchedGeometryEffect(id: card.id, in: namespacing)
                             .transition(AnyTransition.asymmetric(insertion: .identity, removal: .scale))
                             .aspectRatio(2/3, contentMode: .fit)
@@ -96,7 +100,7 @@ struct CardGameView: View {
     var deck: some View {
         ZStack {
             ForEach(vm.cards.filter({ undealt($0) })) { card in
-                CardView(card: card)
+                CardView(card: card, theme: vm.theme)
                     .matchedGeometryEffect(id: card.id, in: namespacing)
                     .transition(AnyTransition.asymmetric(insertion: .identity, removal: .identity))
                     
@@ -111,10 +115,14 @@ struct CardGameView: View {
             }
         }
     }
+    
+    var instruction: some View {
+        Text("TAP THIS CARD")
+            .opacity(dealt.isEmpty ? 1 : 0)
+            .animation(.linear(duration: 0.01))
+    }
+    
+    
 }
 
-struct CardGameView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardGameView()
-    }
-}
+

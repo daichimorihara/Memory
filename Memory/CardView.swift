@@ -10,6 +10,8 @@ import SwiftUI
 struct CardView: View {
 
     var card: CardModel<String>.Card
+    
+    var theme: ThemeModel
 
     var body: some View {
         GeometryReader { geometry in
@@ -22,11 +24,19 @@ struct CardView: View {
 
             }
             .cardify(isFaceUp: card.isFaceUp)
-            .foregroundColor(.red)
+            .foregroundColor(colorConverter(theme))
             //.opacity((card.isMatched && !card.isFaceUp) ? 0 : 1)
         }
     }
     
+    func colorConverter(_ theme: ThemeModel) -> Color {
+        switch theme.color {
+        case "red": return .red
+        case "blue": return .blue
+        case "green": return .green
+        default: return .red
+        }
+    }
     
 }
 

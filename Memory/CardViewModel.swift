@@ -11,16 +11,18 @@ class CardViewModel: ObservableObject {
     
     @Published var cardModel: CardModel<String>
     
+    var theme: ThemeModel
     
-    static let emojis = ["🚗","🚀","✈️","🚁","🛥","⚓️","🦼","🚛","🚒","🧩","🎲","🎹","🎨","🏅"]
+    //static let emojis = ["🚗","🚀","✈️","🚁","🛥","⚓️","🦼","🚛","🚒","🧩","🎲","🎹","🎨","🏅"]
     
-    init() {
-        cardModel = Self.createEmojiCard()
+    init(theme: ThemeModel) {
+        self.theme = theme
+        cardModel = Self.createEmojiCard(with: theme)
     }
     
-    static private func createEmojiCard() -> CardModel<String> {
-        CardModel(numberOfPairs: 5, createCardContent: { idx in
-            emojis[idx]
+    static private func createEmojiCard(with theme: ThemeModel) -> CardModel<String> {
+        CardModel(numberOfPairs: theme.numbers, createCardContent: { idx in
+            theme.emojis.map({ String($0) })[idx]
         })
     }
     
@@ -38,7 +40,7 @@ class CardViewModel: ObservableObject {
     }
     
     func restart() {
-        cardModel = Self.createEmojiCard()
+        cardModel = Self.createEmojiCard(with: theme)
     }
 }
 

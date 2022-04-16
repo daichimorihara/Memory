@@ -19,7 +19,7 @@ struct ThemeView: View {
         NavigationView {
             List {
                 ForEach(vm.themes) { theme in
-                    NavigationLink(destination: Text("Hello")) {
+                    NavigationLink(destination: CardGameView(vm: CardViewModel(theme: theme))) {
                         VStack(alignment: .leading) {
                             Text(theme.name)
                                 .font(.title)
